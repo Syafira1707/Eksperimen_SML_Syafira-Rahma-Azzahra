@@ -4,9 +4,11 @@ import os
 
 
 def preprocess_titanic(
-    input_path="train.csv",
-    output_path="titanic_preprocessed.csv"
+    input_path="titanic_raw/train.csv",
+    output_path="preprocessing/titanic_preprocessed.csv"
 ):
+    df = pd.read_csv(input_path)
+    
     """
     Fungsi untuk melakukan preprocessing dataset Titanic secara otomatis.
     Output berupa dataset siap digunakan untuk pelatihan model.
