@@ -23,5 +23,5 @@ jobs:
 
       - name: Run preprocessing
         run: |
-          python preprocessing/automate.py
+          python preprocessing/automate_Syafira-Rahma-Azzahra.py
 
