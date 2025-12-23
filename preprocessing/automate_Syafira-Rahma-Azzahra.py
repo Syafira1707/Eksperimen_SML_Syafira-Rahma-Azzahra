@@ -98,11 +98,11 @@ def preprocess_titanic(
     print(f"\nFile '{output_path}' berhasil dibuat dan siap digunakan.")
 
     # Khusus untuk Google Colab
+    if IN_COLAB:
     try:
-        if IN_COLAB:
-            files.download(output_path)
-        except:
-        pass
+        files.download(output_path)
+    except Exception as e:
+        print("Gagal download di Colab:", e)
 
     return df
 
