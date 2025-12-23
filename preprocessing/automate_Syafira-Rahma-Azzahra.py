@@ -1,6 +1,12 @@
 import pandas as pd
 import numpy as np
-from google.colab import files
+
+try:
+    from google.colab import files
+    IN_COLAB = True
+except ImportError:
+    IN_COLAB = False
+    
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 
 
@@ -93,8 +99,9 @@ def preprocess_titanic(
 
     # Khusus untuk Google Colab
     try:
-        files.download(output_path)
-    except:
+        if IN_COLAB:
+            files.download(output_path)
+        except:
         pass
 
     return df
